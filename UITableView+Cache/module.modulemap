@@ -1,0 +1,6 @@
+framework module UITableView_Cache {
+    umbrella header "UITableView+Cache.h"
+
+    export *
+    module * { export * }
+}

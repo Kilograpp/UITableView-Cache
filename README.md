@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/Kilograpp/UITableView-Cache.svg?branch=master)](https://travis-ci.org/Kilograpp/UITableView-Cache)
+[![Pod Version](https://img.shields.io/cocoapods/v/UITableView+Cache.svg?style=flat)](http://cocoadocs.org/docsets/UITableView+Cache/)
+[![Pod Platform](https://img.shields.io/cocoapods/p/UITableView+Cache.svg?style=flat)](http://cocoadocs.org/docsets/UITableView+Cache/)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Kilograpp/UITableView-Cache)
+
 # UITableView + Cache
 [https://github.com/Kilograpp/UITableView-Cache](https://github.com/Kilograpp/UITableView-Cache)
 

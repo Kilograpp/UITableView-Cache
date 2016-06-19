@@ -13,7 +13,7 @@ It makes UITableView instantiate and cache cells before cellForRow:atIndexPath: 
 ### CocoaPods
 
 ```
-pod 'UITableView+Cache', :git => 'https://github.com/Kilograpp/UITableView-Cache'
+pod 'UITableView+Cache'
 ```
 
 ### Manual importing
@@ -42,3 +42,10 @@ When dequeueReusableCellWithIdentifier is called and returns nil - the cache is 
 	
 Make sure to call dequeueReusableCellWithIdentifier:reuseIdentifier method and **NOT** dequeueReusableCellWithIdentifier:reuseIdentifier:**forIndexPath:** one. They perform different logic and a crash will occure on wrong method use. 
 
+## License
+
+UITableView+Cache is available under the MIT license. See the LICENSE file for more info.
+
+## Author
+
+[Mehdzor](https://github.com/mehdzor)

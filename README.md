@@ -5,7 +5,7 @@ UITableView cell cache that cures scroll-lags on a cell instantiating.
 
 ## Introduction
 
-`UITableView+Cache` is a light `UITableView` category that purges UITableView scroll-lag that occurs on a new cell instantiation during scroll. 
+`UITableView+Cache` is a light `UITableView` category that purges scroll-lag that occurs on a new cell instantiation during scroll. 
 It makes UITableView instantiate and cache cells before cellForRow:atIndexPath: call. It also provides simple interface very similar to existing registerClass/registerNib one. 
 
 ## Installation
@@ -35,10 +35,10 @@ When dequeueReusableCellWithIdentifier is called and returns nil - the cache is 
 		[self.tableView registerNib:[TableViewNibCell nib] forCellReuseIdentifier:@"MyNibReuseIdentifier" cacheSize:10];
 	}
 	...
-	- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	- (MyCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 		MyCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MyReuseIdentifier"];
 		return cell;
 	}
 	
-Make sure to call dequeueReusableCellWithIdentifier:reuseIdentifier method and NOT dequeueReusableCellWithIdentifier:reuseIdentifier:forIndexPath: one. They perform different logic and a crash will occure on wrong method use. 
+Make sure to call dequeueReusableCellWithIdentifier:reuseIdentifier method and **NOT** dequeueReusableCellWithIdentifier:reuseIdentifier:**forIndexPath:** one. They perform different logic and a crash will occure on wrong method use. 
 

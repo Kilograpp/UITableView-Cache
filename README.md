@@ -21,6 +21,12 @@ It makes UITableView instantiate and cache cells before cellForRow:atIndexPath: 
 pod 'UITableView+Cache'
 ```
 
+### Carthage
+
+```
+github "Kilograpp/UITableView-Cache" "master"
+```
+
 ### Manual importing
 
 Just add both files from src directory to your project.

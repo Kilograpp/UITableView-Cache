@@ -29,7 +29,7 @@ github "Kilograpp/UITableView-Cache" "master"
 
 ### Manual importing
 
-Just add both files from src directory to your project.
+Just add all files from src directory to your project.
 
 
 ## Usage
@@ -37,7 +37,28 @@ Just add both files from src directory to your project.
 When registering custom cells, call overriden registerClass/registerNib method instead of a default. `UITableView+Cache` swizzles dequeueReusableCellWithIdentifier methods with a private one that uses its own cache and implements registerClass/registerNib mechanism on itself. 
 When dequeueReusableCellWithIdentifier is called and returns nil - the cache is asked for a cell. If cache is empty then cell is created using registered class or nib.
 
-#### Example
+#### Swift
+	
+	import UITableView_Cache
+
+	...
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+
+		self.tableView.registerClass(TableViewCodeCell.self, forCellReuseIdentifier: "MyReuseIdentifier", cacheSize: 10)
+		self.tableView.registerNib(TableViewCodeCell.nib, forCellReuseIdentifier: "MyReuseIdentifier", cacheSize: 10)
+	}
+
+	...
+
+	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+		let cell = self.tableView.dequeueReusableCellWithIdentifier("MyReuseIdentifier") as! TableViewCodeCell
+		return cell
+	}
+
+
+#### Objective-C
 
 	- (void)viewDidLoad {
 		[super viewDidLoad];
@@ -45,7 +66,9 @@ When dequeueReusableCellWithIdentifier is called and returns nil - the cache is 
 		[self.tableView registerClass:[TableViewCodeCell class] forCellReuseIdentifier:@"MyReuseIdentifier" cacheSize:10];
 		[self.tableView registerNib:[TableViewNibCell nib] forCellReuseIdentifier:@"MyNibReuseIdentifier" cacheSize:10];
 	}
+
 	...
+
 	- (MyCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 		MyCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MyReuseIdentifier"];
 		return cell;

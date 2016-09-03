@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "UITableView+Cache"
-  s.version          = "0.1.1"
+  s.version          = "0.2.1"
   s.summary          = "The open source UITableView cache category."
   s.homepage         = "https://github.com/Kilograpp/UITableView-Cache.git"
   s.author           = { "Mehdzor" => "maxim@kilograpp.com" }

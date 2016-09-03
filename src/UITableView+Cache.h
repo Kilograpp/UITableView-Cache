@@ -4,7 +4,10 @@
 //
 
 #import <UIKit/UITableView.h>
+
+NS_ASSUME_NONNULL_BEGIN
 @interface UITableView (Cache)
-- (void)registerClass:(nonnull Class)cellClass forCellReuseIdentifier:(nonnull NSString*)identifier cacheSize:(NSUInteger)size;
-- (void)registerNib:(nonnull UINib*)nib forCellReuseIdentifier:(nonnull NSString*)identifier cacheSize:(NSUInteger)size;
+- (void)registerClass:(Class)cellClass forCellReuseIdentifier:(NSString*)identifier cacheSize:(NSUInteger)size;
+- (void)registerNib:(UINib*)nib forCellReuseIdentifier:(NSString*)identifier cacheSize:(NSUInteger)size;
 @end
+NS_ASSUME_NONNULL_END

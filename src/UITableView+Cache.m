@@ -14,13 +14,13 @@
 
 - (void)registerClass:(Class)cellClass forCellReuseIdentifier:(NSString*)identifier cacheSize:(NSUInteger)size {
     [self kg_prepareCache];
-    [self kg_registerClass:cellClass forCellReuseIdentifier:identifier];
+    self.registeredClasses[identifier] = cellClass;
     [self kg_cacheCellsForIdentifier:identifier cacheSize:size];
 }
 
 - (void)registerNib:(UINib*)nib forCellReuseIdentifier:(NSString*)identifier cacheSize:(NSUInteger)size {
     [self kg_prepareCache];
-    [self kg_registerNib:nib forCellReuseIdentifier:identifier];
+    self.registeredNibs[identifier] = nib;
     [self kg_cacheCellsForIdentifier:identifier cacheSize:size];
 }
 
@@ -86,14 +86,6 @@
         return [[self.registeredClasses[identifier] alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     return nil;
-}
-
-- (void)kg_registerNib:(UINib*)cellNib forCellReuseIdentifier:(NSString*)identifier {
-    self.registeredNibs[identifier] = cellNib;
-}
-
-- (void)kg_registerClass:(Class)cellClass forCellReuseIdentifier:(NSString*)identifier {
-    self.registeredClasses[identifier] = cellClass;
 }
 
 - (void)kg_cacheCellsForIdentifier:(NSString*)identifier cacheSize:(NSUInteger)cacheSize {

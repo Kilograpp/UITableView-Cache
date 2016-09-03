@@ -5,6 +5,6 @@
 
 #import <UIKit/UITableView.h>
 @interface UITableView (Cache)
-- (void)registerClass:(Class)cellClass forCellReuseIdentifier:(NSString*)identifier cacheSize:(NSUInteger)size;
-- (void)registerNib:(UINib*)nib forCellReuseIdentifier:(NSString*)identifier cacheSize:(NSUInteger)size;
+- (void)registerClass:(nonnull Class)cellClass forCellReuseIdentifier:(nonnull NSString*)identifier cacheSize:(NSUInteger)size;
+- (void)registerNib:(nonnull UINib*)nib forCellReuseIdentifier:(nonnull NSString*)identifier cacheSize:(NSUInteger)size;
 @end

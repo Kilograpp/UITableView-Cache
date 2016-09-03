@@ -4,9 +4,17 @@
 //
 
 #import "UITableView+Cache.h"
-#import "UITableView+CacheProperties.h"
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
+
+@interface UITableView ()
+
+@property (nonatomic, strong) NSMutableDictionary* cachedCells;
+@property (nonatomic, strong) NSMutableDictionary* registeredNibs;
+@property (nonatomic, strong) NSMutableDictionary* registeredClasses;
+
+@end
+
 
 @implementation UITableView (Cache)
 
@@ -110,6 +118,33 @@
     if (!self.registeredNibs) {
         [self setRegisteredNibs:[NSMutableDictionary dictionary]];
     }
+}
+
+
+#pragma mark - Properties
+
+- (NSDictionary *)cachedCells {
+    return objc_getAssociatedObject(self, @selector(cachedCells));
+}
+
+- (void)setCachedCells:(NSDictionary *)dictionary {
+    objc_setAssociatedObject(self, @selector(cachedCells), dictionary, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSDictionary *)registeredNibs {
+    return objc_getAssociatedObject(self, @selector(registeredNibs));
+}
+
+- (void)setRegisteredNibs:(NSDictionary *)dictionary {
+    objc_setAssociatedObject(self, @selector(registeredNibs), dictionary, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSDictionary *)registeredClasses {
+    return objc_getAssociatedObject(self, @selector(registeredClasses));
+}
+
+- (void)setRegisteredClasses:(NSDictionary *)dictionary {
+    objc_setAssociatedObject(self, @selector(registeredClasses), dictionary, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 

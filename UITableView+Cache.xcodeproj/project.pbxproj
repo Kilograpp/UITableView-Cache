@@ -10,8 +10,6 @@
 		D86FF9DF1D16A8350024B6A5 /* UITableView+Cache.h in Headers */ = {isa = PBXBuildFile; fileRef = D86FF9DE1D16A8350024B6A5 /* UITableView+Cache.h */; };
 		D86FF9EF1D16A9350024B6A5 /* UITableView+Cache.h in Headers */ = {isa = PBXBuildFile; fileRef = D86FF9ED1D16A9350024B6A5 /* UITableView+Cache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D86FF9F01D16A9350024B6A5 /* UITableView+Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = D86FF9EE1D16A9350024B6A5 /* UITableView+Cache.m */; };
-		D87808EB1D7AFD95005A1CA0 /* UITableView+CacheProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = D87808E91D7AFD95005A1CA0 /* UITableView+CacheProperties.h */; };
-		D87808EC1D7AFD95005A1CA0 /* UITableView+CacheProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D87808EA1D7AFD95005A1CA0 /* UITableView+CacheProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,8 +18,6 @@
 		D86FF9E01D16A8350024B6A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D86FF9ED1D16A9350024B6A5 /* UITableView+Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Cache.h"; sourceTree = "<group>"; };
 		D86FF9EE1D16A9350024B6A5 /* UITableView+Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Cache.m"; sourceTree = "<group>"; };
-		D87808E91D7AFD95005A1CA0 /* UITableView+CacheProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+CacheProperties.h"; sourceTree = "<group>"; };
-		D87808EA1D7AFD95005A1CA0 /* UITableView+CacheProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CacheProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +62,6 @@
 			children = (
 				D86FF9ED1D16A9350024B6A5 /* UITableView+Cache.h */,
 				D86FF9EE1D16A9350024B6A5 /* UITableView+Cache.m */,
-				D87808E91D7AFD95005A1CA0 /* UITableView+CacheProperties.h */,
-				D87808EA1D7AFD95005A1CA0 /* UITableView+CacheProperties.m */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -80,7 +74,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D86FF9EF1D16A9350024B6A5 /* UITableView+Cache.h in Headers */,
-				D87808EB1D7AFD95005A1CA0 /* UITableView+CacheProperties.h in Headers */,
 				D86FF9DF1D16A8350024B6A5 /* UITableView+Cache.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,7 +146,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D86FF9F01D16A9350024B6A5 /* UITableView+Cache.m in Sources */,
-				D87808EC1D7AFD95005A1CA0 /* UITableView+CacheProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

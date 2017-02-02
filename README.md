@@ -79,6 +79,15 @@ When dequeueReusableCellWithIdentifier is called and returns nil - the cache is 
 	
 Make sure to call dequeueReusableCellWithIdentifier:reuseIdentifier method and **NOT** dequeueReusableCellWithIdentifier:reuseIdentifier:**forIndexPath:** one. They perform different logic and a crash will occure on wrong method use. 
 
+#### Storyboards
+
+Storyboards are not supported, cached cells should be registered from code. 
+Nevertheless, if you strongly require storyboard usage then you could swizzle basic UITableView's registerNib/registerClass methods for your own and call. But I won't recommend this solution for it tampers UITableView mechanism.
+
+#### Best Practises
+
+As you know any cache consumes some memory. Best advice I could give is to keep track of your tableViews and free them as soon as possible. Having too many tableViews may cause memory pressure on your app. 
+
 ## License
 
 UITableView+Cache is available under the MIT license. See the LICENSE file for more info.

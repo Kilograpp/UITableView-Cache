@@ -9,7 +9,7 @@
 
 @interface UITableView ()
 
-@property (nonatomic, strong) NSMutableDictionary* cachedCells;
+@property (nonatomic, strong) NSMutableDictionary* cachedCells; // Do not use NSCache instead.
 @property (nonatomic, strong) NSMutableDictionary* registeredNibs;
 @property (nonatomic, strong) NSMutableDictionary* registeredClasses;
 

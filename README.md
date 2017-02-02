@@ -17,14 +17,14 @@ It makes UITableView instantiate and cache cells before cellForRow:atIndexPath: 
 
 ### CocoaPods
 
-```
-pod 'UITableView+Cache'
+``` batch
+	pod 'UITableView+Cache'
 ```
 
 ### Carthage
 
-```
-github "Kilograpp/UITableView-Cache" "master"
+``` batch
+	github "Kilograpp/UITableView-Cache" "master"
 ```
 
 ### Manual importing
@@ -38,7 +38,8 @@ When registering custom cells, call overriden registerClass/registerNib method i
 When dequeueReusableCellWithIdentifier is called and returns nil - the cache is asked for a cell. If cache is empty then cell is created using registered class or nib.
 
 #### Swift
-	
+
+``` swift
 	import UITableView_Cache
 
 	...
@@ -56,10 +57,11 @@ When dequeueReusableCellWithIdentifier is called and returns nil - the cache is 
 		let cell = self.tableView.dequeueReusableCellWithIdentifier("MyReuseIdentifier") as! TableViewCodeCell
 		return cell
 	}
-
+```
 
 #### Objective-C
 
+``` objective-c
 	- (void)viewDidLoad {
 		[super viewDidLoad];
 
@@ -73,6 +75,7 @@ When dequeueReusableCellWithIdentifier is called and returns nil - the cache is 
 		MyCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MyReuseIdentifier"];
 		return cell;
 	}
+```
 	
 Make sure to call dequeueReusableCellWithIdentifier:reuseIdentifier method and **NOT** dequeueReusableCellWithIdentifier:reuseIdentifier:**forIndexPath:** one. They perform different logic and a crash will occure on wrong method use. 
 

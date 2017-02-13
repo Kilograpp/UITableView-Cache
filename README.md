@@ -40,41 +40,41 @@ When dequeueReusableCellWithIdentifier is called and returns nil - the cache is 
 #### Swift 3
 
 ``` swift
-	import UITableView_Cache
+import UITableView_Cache
 
-	...
+...
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
+override func viewDidLoad() {
+	super.viewDidLoad()
 
-		self.tableView.registerClass(TableViewCodeCell.self, forCellReuseIdentifier: "MyReuseIdentifier", cacheSize: 10)
-		self.tableView.registerNib(TableViewCodeCell.nib, forCellReuseIdentifier: "MyReuseIdentifier", cacheSize: 10)
-	}
+	self.tableView.registerClass(TableViewCodeCell.self, forCellReuseIdentifier: "MyReuseIdentifier", cacheSize: 10)
+	self.tableView.registerNib(TableViewCodeCell.nib, forCellReuseIdentifier: "MyReuseIdentifier", cacheSize: 10)
+}
 
-	...
+...
 
-	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = self.tableView.dequeueReusableCellWithIdentifier("MyReuseIdentifier") as! TableViewCodeCell
-		return cell
-	}
+override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+	let cell = self.tableView.dequeueReusableCellWithIdentifier("MyReuseIdentifier") as! TableViewCodeCell
+	return cell
+}
 ```
 
 #### Objective-C
 
 ``` objective-c
-	- (void)viewDidLoad {
-		[super viewDidLoad];
+- (void)viewDidLoad {
+	[super viewDidLoad];
 
-		[self.tableView registerClass:[TableViewCodeCell class] forCellReuseIdentifier:@"MyReuseIdentifier" cacheSize:10];
-		[self.tableView registerNib:[TableViewNibCell nib] forCellReuseIdentifier:@"MyNibReuseIdentifier" cacheSize:10];
-	}
+	[self.tableView registerClass:[TableViewCodeCell class] forCellReuseIdentifier:@"MyReuseIdentifier" cacheSize:10];
+	[self.tableView registerNib:[TableViewNibCell nib] forCellReuseIdentifier:@"MyNibReuseIdentifier" cacheSize:10];
+}
 
-	...
+...
 
-	- (MyCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-		MyCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MyReuseIdentifier"];
-		return cell;
-	}
+- (MyCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	MyCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MyReuseIdentifier"];
+	return cell;
+}
 ```
 	
 Make sure to call dequeueReusableCellWithIdentifier:reuseIdentifier method and **NOT** dequeueReusableCellWithIdentifier:reuseIdentifier:**forIndexPath:** one. They perform different logic and a crash will occure on wrong method use. 

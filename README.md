@@ -37,7 +37,7 @@ Just add all files from src directory to your project.
 When registering custom cells, call overriden registerClass/registerNib method instead of a default. `UITableView+Cache` swizzles dequeueReusableCellWithIdentifier methods with a private one that uses its own cache and implements registerClass/registerNib mechanism on itself. 
 When dequeueReusableCellWithIdentifier is called and returns nil - the cache is asked for a cell. If cache is empty then cell is created using registered class or nib.
 
-#### Swift
+#### Swift 3
 
 ``` swift
 	import UITableView_Cache
@@ -53,7 +53,7 @@ When dequeueReusableCellWithIdentifier is called and returns nil - the cache is 
 
 	...
 
-	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = self.tableView.dequeueReusableCellWithIdentifier("MyReuseIdentifier") as! TableViewCodeCell
 		return cell
 	}
